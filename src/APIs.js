@@ -16,31 +16,53 @@ async function getWeather(location) {
     }
   );
   const data = await weatherFetch.json();
-  // console.log(data);
   city = titleCase(city);
-  const weatherIcon = data.weather[0].main;
+  const weatherID = data.weather[0].id;
+  const mainWeather = data.weather[0].main;
   const conditions = titleCase(data.weather[0].description);
   const temp = Math.round(data.main.temp) - 273;
   const tempFeel = Math.round(data.main.feels_like - 273);
-  return { city, weatherIcon, conditions, temp, tempFeel };
+  const country = data.sys.country;
+  return { city, country, mainWeather, conditions, temp, tempFeel, weatherID };
 }
 
-async function giphyRequest(weather) {
-  const options = {
-    thunderstorm: "3osxYzIQRqN4DOEddC",
-    drizzle: "xT9GEOg09OuResnZ6g",
-    rain: "s9cu1TZU37KY8",
-    snow: "Xi2Xu0MejhsUo",
-    clear: "0Styincf6K2tvfjb5Q",
-    clouds: "5HK4TiiBeLSZq",
-  };
-  console.log(options[weather]);
+async function giphyRequest(weatherID) {
+  let id;
+  if (200 <= weatherID && weatherID <= 250) {
+    //Thunderstorm
+    id = "3osxYzIQRqN4DOEddC";
+  } else if (300 <= weatherID && weatherID <= 350) {
+    //Drizzle
+    id = "B2czf5h7JtjNe";
+  } else if (500 <= weatherID && weatherID <= 550) {
+    //Rain
+    id = "3o7Zex09d6tpzl65H2";
+  } else if (600 <= weatherID && weatherID <= 650) {
+    //Snow
+    id = "Xi2Xu0MejhsUo";
+  } else if (700 <= weatherID && weatherID <= 799) {
+    //atmospheric conditions unclear
+    id = uf3jumi0zzUv6;
+  } else if (weatherID == 800) {
+    //Clear skies
+    id = "l1m1119sRnw7aycvoW";
+  } else if (801 === weatherID) {
+    //Few clouds
+    id = "PIh4laWJlz9bq";
+  } else if (802 === weatherID || weatherID === 803) {
+    //Med cloudy
+    id = "HoUgegTjteXCw";
+  } else if (weatherID === 804) {
+    //Cloudy
+    id = "5HK4TiiBeLSZq";
+  }
+
   const response = await fetch(
-    `https://api.giphy.com/v1/gifs/${options[weather]}?api_key=GiDXnFA2iZr85cbl38cM5c9IbNqqYm5x`,
+    `https://api.giphy.com/v1/gifs/${id}?api_key=GiDXnFA2iZr85cbl38cM5c9IbNqqYm5x`,
     { mode: "cors" }
   );
-  const tempJSON = await response.json();
-  return tempJSON.data.images.original.url;
+  const gifJSON = await response.json();
+  return gifJSON;
 }
 
 function titleCase(str) {

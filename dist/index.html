@@ -23,12 +23,19 @@
     ></script>
   </head>
   <body>
-    <header class="title">Global Weather Report</header>
+    <header>
+      <div>Global Weather Report</div>
+      <div class="buttons">
+        <button id="unit-btn">&degF</button>
+        <button>
+          <a href="https://github.com/spuddister">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </button>
+      </div>
+    </header>
     <div class="container">
       <div class="search">
-        <button id="search-btn">
-          <ion-icon name="partly-sunny-outline"></ion-icon>
-        </button>
         <input
           type="text"
           name="search"
@@ -36,15 +43,7 @@
           placeholder="Search for a city..."
         />
       </div>
-      <div class="content">
-        <div class="card">
-          <a class="delete-btn" href="#"><ion-icon name="close"></ion-icon></a>
-          <p class="location"></p>
-          <p class="conditions"></p>
-          <p class="conditions-icon"></p>
-          <p class="feels-like"></p>
-        </div>
-      </div>
+      <div class="content"></div>
     </div>
   </body>
 </html>
