@@ -23,6 +23,7 @@ async function getWeather(location) {
   const temp = Math.round(data.main.temp) - 273;
   const tempFeel = Math.round(data.main.feels_like - 273);
   const country = data.sys.country;
+  console.log(data);
   return { city, country, mainWeather, conditions, temp, tempFeel, weatherID };
 }
 
@@ -42,7 +43,7 @@ async function giphyRequest(weatherID) {
     id = "Xi2Xu0MejhsUo";
   } else if (700 <= weatherID && weatherID <= 799) {
     //atmospheric conditions unclear
-    id = uf3jumi0zzUv6;
+    id = "uf3jumi0zzUv6";
   } else if (weatherID == 800) {
     //Clear skies
     id = "l1m1119sRnw7aycvoW";
