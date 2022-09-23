@@ -1,7 +1,7 @@
 async function getWeather(location) {
   let city = location || "Ottawa";
   const geocodeLoc = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=00bcef97c6c181906b0ec9530b9ee306`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=00bcef97c6c181906b0ec9530b9ee306`,
     {
       mode: "cors",
     }
