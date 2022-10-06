@@ -7,6 +7,8 @@ For this project from [The Odin Project](https://www.theodinproject.com/) Curric
 - Prettier
 - Dynamic User Interface Interactions
 - Form validation with Javascript
+- Asynchronous Javascript (promises, resolve, reject, .then, await)
+- APIs (fetch, API Keys, Cross Origin Resource Sharing (CORS))
   
 #
 [See deployment here.](https://spuddister.github.io/to-do-list-project/)
