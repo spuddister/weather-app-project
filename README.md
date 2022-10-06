@@ -15,5 +15,5 @@ For this project from [The Odin Project](https://www.theodinproject.com/) Curric
 
 
 ### APIs Used
-- [Giphy] (https://developers.giphy.com/)
-- [OpenWeather] (https://openweathermap.org/)
+- [Giphy](https://developers.giphy.com/)
+- [OpenWeather](https://openweathermap.org/)
