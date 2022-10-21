@@ -1,6 +1,6 @@
 # Weather App Project
 
-For this project from [The Odin Project](https://www.theodinproject.com/) Curriculum, I built a global weather application that can show you the weather in any city using async JS and multiple APIs.
+For this project from [The Odin Project](https://www.theodinproject.com/) curriculum, I built a global weather application that can show you the weather in any city using async JS and multiple APIs.
 
 ### New Skills / Knowledge
 - ESLint
